@@ -128,12 +128,19 @@ function buildVectors() {
     let v1 = new Vector(Math.cos(q1) * e1, Math.sin(q1) * e1);
     let v2 = new Vector(Math.cos(q2) * e2, Math.sin(q2) * e2);
     let values = calcEres(e1, e2, q1, q2);
-    $('#E_1').html(values.e1);
-    $('#E_2').html(values.e2);
-    $('#E_rez').html(values.res);
-    $('#I_rez').html(sqr(values.res));
+    $('#E_1').html(formatNumber(values.e1));
+    $('#E_2').html(formatNumber(values.e2));
+    $('#E_rez').html(formatNumber(values.res));
+    $('#I_rez').html(formatNumber(sqr(values.res)));
     console.log(values);
     return [v1, v2];
+}
+
+function formatNumber(a) {
+    a = a.toString(10);
+    let dotPos =  a.indexOf('.');
+    console.log(dotPos);
+    return a.substring(0, dotPos + 5);
 }
 
 /**
