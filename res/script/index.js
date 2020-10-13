@@ -115,6 +115,8 @@ const drawVector = (color, v, num = 1, start = new Vector($('canvas').width() / 
 //     }
 // })
 
+const sqr = (x) => { return x * x };
+
 /**
  * @return {Vector[]} - 2 вектора, собранные из входных данных
  */
@@ -125,9 +127,34 @@ function buildVectors() {
     let q2 = $('#q2_input').val();
     let v1 = new Vector(Math.cos(q1) * e1, Math.sin(q1) * e1);
     let v2 = new Vector(Math.cos(q2) * e2, Math.sin(q2) * e2);
-    console.log(v1);
-    console.log(v2);
+    let values = calcEres(e1, e2, q1, q2);
+    $('#E_1').html(values.e1);
+    $('#E_2').html(values.e2);
+    $('#E_rez').html(values.res);
+    console.log(values);
     return [v1, v2];
+}
+
+/**
+ * Считает E по формуле E = E0cos(wt + p)
+ * @param a {Number} амплитуда (E0)
+ * @param q {Number} фаза
+ * @return {Number} E
+ */
+function calcE(a, q) {
+    let w = $('#w_input').val();
+    let t = $('#t_input').val();
+    return a * Math.cos(w * t + q);
+}
+
+function calcEres(e1, e2, q1, q2) {
+    let E1 = calcE(e1, q1);
+    let E2 = calcE(e2, q2);
+    return {
+        res: Math.sqrt(sqr(e1) + sqr(e2) + 2 * E1 * E2 * Math.cos(q2 - q1)),
+        e1: E1,
+        e2: E2
+    };
 }
 
 const drawVectors = () => {
