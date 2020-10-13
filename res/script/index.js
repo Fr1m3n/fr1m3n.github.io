@@ -139,7 +139,6 @@ function buildVectors() {
 function formatNumber(a) {
     a = a.toString(10);
     let dotPos =  a.indexOf('.');
-    console.log(dotPos);
     return a.substring(0, dotPos + 5);
 }
 
