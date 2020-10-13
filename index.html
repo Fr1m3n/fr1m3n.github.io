@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="res/style/main.css">
-    <title>Кольца Ньютона</title>
+    <title>ФА диаграма интерференции</title>
     <script src="res/script/jquery.min.js" type="application/javascript"></script>
     <script src="res/script/jcanvas.min.js" type="application/javascript"></script>
 </head>
@@ -15,7 +15,7 @@
 <main>
     <div class="container">
         <div class="canvasWrap" style="text-align: left;">
-            <canvas class="gradient" id="grad" width="500" height="500"></canvas>
+            <canvas class="gradient" id="grad" width="500" height="500"></canvas><br>
         </div>
         <div class="container-inputs">
             <form>
@@ -44,6 +44,11 @@
                     <input type="number" id="q2_input" class="canvas_update" step="0.1"> рад
                 </div>
             </form>
+            <div class="form-group">
+                <p>E1 = <span id="E_1"></span></p>
+                <p>E2 = <span id="E_2"></span></p>
+                <p>E рез = <span id="E_rez"></span></p>
+            </div>
         </div>
         <div class="description">
             <h2>Фазово-амплитудная диаграмма интерференции</h2>
@@ -52,6 +57,8 @@
                 <div class="formula">Формула задающая колебания: <img src="res/images/small.png" alt="shit" style="width: 60%; height: 60%;"></div><br>
                 <div class="formula">Формула вектора Eрез: </div><br>
                 <img src="res/images/large.png" alt="shit" style="width: 90%; height: 90%;">
+                <div class="formula">Формула расчета интенсивности: </div><br>
+                <img src="res/images/Ish.png" alt="shit" style="width: 90%; height: 90%;">
             </div>
         </div>
     </div>
