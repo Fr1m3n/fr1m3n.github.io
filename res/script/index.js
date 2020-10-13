@@ -131,6 +131,7 @@ function buildVectors() {
     $('#E_1').html(values.e1);
     $('#E_2').html(values.e2);
     $('#E_rez').html(values.res);
+    $('#I_rez').html(sqr(values.res));
     console.log(values);
     return [v1, v2];
 }
